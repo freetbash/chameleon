@@ -1,0 +1,4 @@
+CC:=gcc
+CXX:=g++
+INCLUDE=-I../../include
+FLAG=-w -std=c++14

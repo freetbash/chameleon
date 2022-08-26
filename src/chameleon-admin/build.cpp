@@ -13,14 +13,14 @@ void build(){
                 App(app).build();
         }
     std::string cmd("");
-    cmd="ccache g++ -c "+root+"/config/admin.cpp -o "+root+"/temp/config.admin.cpp.o -I./ -lchameleon -lsqlite3 -std=c++14 -O3";
+    cmd="ccache g++ -c "+root+"/config/urls.cpp -o "+root+"/temp/config.urls.cpp.o -I./ -std=c++14 -O3";
     log("[*] "+cmd);
     check_error(system(cmd.c_str()));
 
-    cmd="ccache g++ "+root+"/temp/*.o "+root+"/main.cpp -I./ -lchameleon -lpthread -lsqlite3 -o manage -std=c++14 -O3 -g";
+    cmd="ccache g++ "+root+"/temp/*.o "+root+"/main.cpp -I./ -lchameleon -lhiberlite -lsqlite3 -lpthread -ldl -o manage -std=c++14 -O3 -g";
     log("[*] "+cmd);
-    log(color("[+]Build ok! {\n\tmanage\n}\n",GREEN));
     check_error(system(cmd.c_str()));
+    log(color("[+]Build ok! {\n\tmanage\n}\n",GREEN));
 
 
 

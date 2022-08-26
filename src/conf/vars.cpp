@@ -13,7 +13,7 @@ HttpServer *server;
 
 std::vector<App> INSTALLED_APPS;
 
-
+hiberlite::Database *db=new hiberlite::Database;
 
 bool DEBUG;
 int port;

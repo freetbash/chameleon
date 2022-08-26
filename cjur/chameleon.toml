@@ -1,0 +1,11 @@
+[chameleon]
+name="cjur"
+port=3147
+debug=true
+TEMPLATE_DIR="/template"
+STATIC_DIR="/static"
+STATIC_ROOT="/static"
+DATABASE_PATH="cjur.sqlite3"
+apps=[
+    "test_app"
+]

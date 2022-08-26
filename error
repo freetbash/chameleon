@@ -1,0 +1,16 @@
+test_app.urls.cpp.o: 
+          In function `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > hiberlite::Database::getClassName<Test>()':
+urls.cpp:(.text+0xe0): multiple definition of `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > hiberlite::Database::getClassName<Test>()'
+config.urls.cpp.o:urls.cpp:(.text+0xe0): first defined here
+
+test_app.views.test.cpp.o: 
+          In function `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > hiberlite::Database::getClassName<Test>()':
+test.cpp:(.text+0xe0): multiple definition of `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > hiberlite::Database::getClassName<Test>()'
+config.urls.cpp.o:urls.cpp:(.text+0xe0): first defined here
+
+/tmp/ccN660M9.o: 
+          In function `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_local_data()':
+/usr/include/c++/6/bits/stl_deque.h:570: multiple definition of `std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > hiberlite::Database::getClassName<Test>()'
+config.urls.cpp.o:urls.cpp:(.text+0xe0): first defined here
+
+collect2: error: ld returned 1 exit status

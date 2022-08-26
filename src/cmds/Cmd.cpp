@@ -33,6 +33,7 @@ void Cmd::init(){
     STATIC_DIR = root + toml::find<std::string>(project_data,"STATIC_DIR");
     STATIC_ROOT = toml::find<std::string>(project_data,"STATIC_ROOT");
     port = toml::find<int>(project_data,"port");
+    db->open(toml::find<std::string>(project_data,"DATABASE_PATH"));
     for (std::string app :toml::find<std::vector<std::string>>(project_data, "apps")){
             INSTALLED_APPS.push_back(
                 App(app)

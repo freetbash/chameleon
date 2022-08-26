@@ -41,38 +41,34 @@ void app_models_register();
 
 }setting.close();
 
-std::ofstream urls;
-    urls.open((project_dir+"/config/views_urls.h"),std::ios::out);
-{urls << R""(#ifndef CHAMELEON_CONFIG_VIEWS_URLS
+std::ofstream views_urls;
+    views_urls.open((project_dir+"/config/views_urls.h"),std::ios::out);
+{views_urls << R""(#ifndef CHAMELEON_CONFIG_VIEWS_URLS
 #define CHAMELEON_CONFIG_VIEWS_URLS
 #include <chameleon/views/views.h>
+
+// for app
 #include <apps/test_app/views.h>
 
 
+void apps_urls_init();
+
 #endif
-)"";}urls.close();
 
+)"";}views_urls.close();
 
-std::ofstream admin;
-    urls.open((project_dir+"/config/admin.cpp"),std::ios::out);
-{urls << R""(#ifndef CHAMELEON_CONFIG_ADMIN
-#define CHAMELEON_CONFIG_ADMIN
-#include <chameleon/conf/vars.h>
-#include <apps/test_app/models.h>
-void app_models_register(){
-    db.registerBeanClass<Test>();
-}
-
-#endif)"";}admin.close();
+std::ofstream urls;
+    urls.open((project_dir+"/config/urls.cpp"),std::ios::out);
+{urls << R""(#include <config/views_urls.h>
+void apps_urls_init(){
+    test_app_urls_init();
+})"";}urls.close();
 
 
 
 std::ofstream main;
     main.open((project_dir+"/main.cpp"),std::ios::out);
-{main << R""(
-
-#include <config/setting.h>
-// init urls  -IBASE_DIR
+{main << R""(#include <config/setting.h>
 
 int main(int argc, char *argv[]){
     Cmd *cmd = new Cmd(argc,argv);
@@ -80,12 +76,20 @@ int main(int argc, char *argv[]){
     // urls init
     {
         chameleon_urls_init();
-        test_app_urls_init();
+        apps_urls_init();
         app_models_register();
     }
     cmd->compare();
 
     return 0;
+}
+
+// export classes
+HIBERLITE_EXPORT_CLASS(Test)
+
+// register class
+void app_models_register(){
+    db->registerBeanClass<Test>();
 })"";}main.close();
     root=project_dir;
     new_app("test_app");

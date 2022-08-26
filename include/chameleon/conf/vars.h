@@ -27,6 +27,8 @@ extern HttpServer *server;
 #include <vector>
 extern std::vector<App> INSTALLED_APPS;
 
+#include <hiberlite/hiberlite.h>
+extern hiberlite::Database *db;
 
 extern int port;
 extern std::string TEMPLATE_DIR;

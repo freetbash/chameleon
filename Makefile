@@ -4,33 +4,44 @@ include Config
 
 Target=chameleon-admin
 ALL=app chameleon-admin cmds conf db http models template urls utils views
+TOOLS=hiberlite
+INCLUDE=-Iinclude -Itools/hiberlite/include
+LIBPATH=-Lbin -Ltools/hiberlite/bin
+LIB=-lchameleon -lhiberlite -lsqlite3 -lpthread -ldl
 
 $(Target):libchameleon.a
 	@echo Building chameleon-admin...
-	$(CXX) src/main.cpp -Iinclude -w -Lbin -lchameleon -lsqlite3 -o bin/chameleon-admin
-libchameleon.a:app
+	$(CXX) src/main.cpp $(INCLUDE) -w $(LIBPATH) $(LIB) -o bin/chameleon-admin $(FLAG)
+libchameleon.a:tool app
 	@echo Building libchameleon.a
 	ar rcsv bin/libchameleon.a temp/*.o
 
 app:
-	@for i in $(ALL);do echo "Build ($$i)"; $(MAKE) -C src/$$i; done;
+	@for i in $(ALL);do echo "	Build ($$i)"; $(MAKE) -C src/$$i; done;
+tool:
+	@for i in $(TOOLS);do echo "	Build ($$i)"; $(MAKE) -C tools/$$i/src; done;
 
-install:uninstall
-	@echo "	cp headers --> /usr/include/chameleon"
+install:uninstall tools_install
+	@echo "	Install chameleon"
 	@cp include/chameleon /usr/include/chameleon -rf
-	@echo "	cp chameleon-admin --> /usr/bin/chameleon-admin"
 	@cp bin/chameleon-admin /usr/bin/chameleon-admin
-	@echo "	cp libchameleon.a --> /lib/libchameleon.a"
 	@cp bin/libchameleon.a /lib/libchameleon.a 
 	@echo "	Ok"
 
-uninstall:
+uninstall:tools_uninstall 
+	@echo "	Remove chameleon"
 	rm -rf /usr/include/chameleon
-	rm /lib/libchameleon.a
-	rm /usr/bin/chameleon-admin
+	rm -f /lib/libchameleon.a
+	rm -f /usr/bin/chameleon-admin
 
+tools_install:
+	@for i in $(TOOLS);do echo "	Install ($$i)"; $(MAKE) -C tools/$$i/src install; done;
+
+tools_uninstall:
+	@for i in $(TOOLS);do echo "	uninstall ($$i)"; $(MAKE) -C tools/$$i/src uninstall; done;
 clean:
 	@echo Cleaning...
+	@for i in $(TOOLS);do echo "	Clean ($$i)"; $(MAKE) -C tools/$$i/src clean; done;
 	@$(RM) temp/*
 	@$(RM) bin/*
 	@echo Ok

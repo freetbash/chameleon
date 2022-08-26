@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Aug 25 17:39:43 2022
+# Make data base, printed on Fri Aug 26 21:35:47 2022
 
 # Variables
 
@@ -48,6 +48,8 @@ PATH = /home/bash/.vscode-server/bin/e4503b30fc78200f846c62cf8091b76ff5547662/bi
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 ELECTRON_RUN_AS_NODE = 1
+# makefile (from 'Makefile', line 10)
+LIB = -lchameleon -lhiberlite -lsqlite3 -lpthread -ldl
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -57,7 +59,7 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 PWD = /home/bash/Projects/chameleon
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-7adacf82-efd9-4e88-8d8c-107f9cb13114.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-71eacf28-3787-4188-be1d-14fd45d30ca9.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -82,14 +84,16 @@ MAKECMDGOALS := all
 SHLVL = 1
 # makefile (from 'Config', line 1)
 CC := gcc
+# makefile (from 'Makefile', line 9)
+LIBPATH = -Lbin -Ltools/hiberlite/bin
 # default
 MAKE_VERSION := 4.1
 # environment
 USER = bash
 # makefile
 .DEFAULT_GOAL := chameleon-admin
-# makefile (from 'Config', line 3)
-INCLUDE = -I../../include
+# makefile (from 'Makefile', line 8)
+INCLUDE = -Iinclude -Itools/hiberlite/include
 # environment
 NAME = Code
 # makefile (from 'Makefile', line 6)
@@ -102,6 +106,8 @@ LESS = -R
 VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/31414/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
 # default
 MAKE_COMMAND := make
+# makefile (from 'Makefile', line 7)
+TOOLS = hiberlite
 # environment
 OLDPWD = /mnt/d/Apps/Microsoft VS Code
 # default
@@ -151,7 +157,7 @@ TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Debian
 # variable set hash-table stats:
-# Load=69/1024=7%, Rehash=0, Collisions=7/97=7%
+# Load=72/1024=7%, Rehash=0, Collisions=8/101=8%
 
 # Pattern-specific Variable Values
 
@@ -159,9 +165,9 @@ WSL_DISTRO_NAME = Debian
 
 # Directories
 
-# . (device 2, inode 2814749767273505): 10 files, no impossibilities.
+# . (device 2, inode 2814749767273505): 14 files, no impossibilities.
 
-# 10 files, no impossibilities in 1 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -169,11 +175,11 @@ WSL_DISTRO_NAME = Debian
 
 # Files
 
-libchameleon.a: app
+libchameleon.a: tool app
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 12):
+#  recipe to execute (from 'Makefile', line 16):
 	@echo Building libchameleon.a
 	ar rcsv bin/libchameleon.a temp/*.o
 
@@ -191,19 +197,20 @@ all:
 #  File does not exist.
 #  File has not been updated.
 
-uninstall:
+uninstall: tools_uninstall
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 28):
+#  recipe to execute (from 'Makefile', line 32):
+	@echo "	Remove chameleon"
 	rm -rf /usr/include/chameleon
-	rm /lib/libchameleon.a
-	rm /usr/bin/chameleon-admin
+	rm -f /lib/libchameleon.a
+	rm -f /usr/bin/chameleon-admin
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-25 16:35:47.8011769
+#  Last modified 2022-08-26 21:26:50.8280197
 #  File has been updated.
 #  Successfully updated.
 
@@ -211,8 +218,22 @@ app:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 16):
-	@for i in $(ALL);do echo "Build ($$i)"; $(MAKE) -C src/$$i; done;
+#  recipe to execute (from 'Makefile', line 20):
+	@for i in $(ALL);do echo "	Build ($$i)"; $(MAKE) -C src/$$i; done;
+
+tool:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 22):
+	@for i in $(TOOLS);do echo "	Build ($$i)"; $(MAKE) -C tools/$$i/src; done;
+
+tools_install:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 38):
+	@for i in $(TOOLS);do echo "	Install ($$i)"; $(MAKE) -C tools/$$i/src install; done;
 
 # Not a target:
 .DEFAULT:
@@ -229,47 +250,53 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 33):
+#  recipe to execute (from 'Makefile', line 43):
 	@echo Cleaning...
+	@for i in $(TOOLS);do echo "	Clean ($$i)"; $(MAKE) -C tools/$$i/src clean; done;
 	@$(RM) temp/*
 	@$(RM) bin/*
 	@echo Ok
+
+tools_uninstall:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 41):
+	@for i in $(TOOLS);do echo "	uninstall ($$i)"; $(MAKE) -C tools/$$i/src uninstall; done;
 
 chameleon-admin: libchameleon.a
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 9):
+#  recipe to execute (from 'Makefile', line 13):
 	@echo Building chameleon-admin...
-	$(CXX) src/main.cpp -Iinclude -w -Lbin -lchameleon -lsqlite3 -o bin/chameleon-admin
+	$(CXX) src/main.cpp $(INCLUDE) -w $(LIBPATH) $(LIB) -o bin/chameleon-admin $(FLAG)
 
-install: uninstall
+install: uninstall tools_install
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 19):
-	@echo "	cp headers --> /usr/include/chameleon"
+#  recipe to execute (from 'Makefile', line 25):
+	@echo "	Install chameleon"
 	@cp include/chameleon /usr/include/chameleon -rf
-	@echo "	cp chameleon-admin --> /usr/bin/chameleon-admin"
 	@cp bin/chameleon-admin /usr/bin/chameleon-admin
-	@echo "	cp libchameleon.a --> /lib/libchameleon.a"
 	@cp bin/libchameleon.a /lib/libchameleon.a 
 	@echo "	Ok"
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=4/34=12%
+# Load=15/1024=1%, Rehash=0, Collisions=7/43=16%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 22 / storage = 177 B / avg = 8 B
-# current buf: size = 8162 B / used = 177 B / count = 22 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 238 B / avg = 8 B
+# current buf: size = 8162 B / used = 238 B / count = 29 / avg = 8 B
 
-# strcache performance: lookups = 41 / hit rate = 46%
+# strcache performance: lookups = 54 / hit rate = 46%
 # hash-table stats:
-# Load=22/8192=0%, Rehash=0, Collisions=1/41=2%
-# Finished Make data base on Thu Aug 25 17:39:43 2022
+# Load=29/8192=0%, Rehash=0, Collisions=4/54=7%
+# Finished Make data base on Fri Aug 26 21:35:47 2022
 
  

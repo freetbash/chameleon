@@ -1,8 +1,9 @@
 #include <apps/test_app/views.h>
 // test_app.views.o
 void test_app::test(HttpRequest *request){
-    auto _ = db->createBean<Test>();
-    _->name="123123132";
+    auto c = db->createBean<Test>();
+    c->name="fuck";
 
-    render(request,"test_app/index.html",{_->obj()});
+
+    render(request,"test_app/index.html",{{"sb",c->toJson()}});
 }

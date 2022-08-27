@@ -4,12 +4,12 @@
 #include <chameleon/http/HttpResponse.h>
 #include <string>
 #include <chameleon/utils/tools.h>
-#include <chameleon/template/cjinja.h>
 #include <chameleon/conf/vars.h>
+#include <chameleon/template/cjinja.h>
 #include <vector>
+#include <map>
 
-
-void render(HttpRequest *request,std::string template_path,std::vector<EasyJson::JSONObject> data);
+void render(HttpRequest *request,std::string template_path,std::map<std::string,std::string> data);
 
 
 #endif 

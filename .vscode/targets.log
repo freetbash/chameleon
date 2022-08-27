@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 26 21:35:47 2022
+# Make data base, printed on Sat Aug 27 20:36:00 2022
 
 # Variables
 
@@ -43,7 +43,7 @@ VSCODE_CWD = /mnt/d/Apps/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/bash/.vscode-server/bin/e4503b30fc78200f846c62cf8091b76ff5547662/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/mnt/d/Apps/vmware/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/d/Environment/MinGW/bin:/mnt/d/Environment/Git/cmd:/mnt/d/Environment/miniconda3:/mnt/d/Environment/vim/vim90:/mnt/c/Users/31414/AppData/Local/Microsoft/WindowsApps:/mnt/d/Apps/Microsoft VS Code/bin:/mnt/d/Environment/Fiddler
+PATH = /home/bash/.vscode-server/bin/e4503b30fc78200f846c62cf8091b76ff5547662/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/mnt/d/Apps/vmware/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/d/Environment/MinGW/bin:/mnt/d/Environment/Git/cmd:/mnt/d/Environment/miniconda3:/mnt/d/Environment/vim/vim90:/mnt/c/Users/31414/AppData/Local/Microsoft/WindowsApps:/mnt/d/Apps/Microsoft VS Code/bin:/mnt/d/Environment/Fiddler
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -59,7 +59,9 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 PWD = /home/bash/Projects/chameleon
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-71eacf28-3787-4188-be1d-14fd45d30ca9.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-efe83f8e-0220-4db6-aa54-9eb1038e3370.sock
+# environment
+WSL_INTEROP = /run/WSL/8_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -67,7 +69,7 @@ HOME = /home/bash
 # environment
 LOGNAME = bash
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 ZSH = /home/bash/.oh-my-zsh
 # environment
@@ -157,7 +159,7 @@ TERM = xterm-256color
 # environment
 WSL_DISTRO_NAME = Debian
 # variable set hash-table stats:
-# Load=72/1024=7%, Rehash=0, Collisions=8/101=8%
+# Load=73/1024=7%, Rehash=0, Collisions=8/102=8%
 
 # Pattern-specific Variable Values
 
@@ -165,7 +167,7 @@ WSL_DISTRO_NAME = Debian
 
 # Directories
 
-# . (device 2, inode 2814749767273505): 14 files, no impossibilities.
+# . (device 2064, inode 27919): 14 files, no impossibilities.
 
 # 14 files, no impossibilities in 1 directories.
 
@@ -186,7 +188,7 @@ libchameleon.a: tool app
 # Not a target:
 Config:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-25 16:06:38.7007243
+#  Last modified 2022-08-25 16:06:38
 #  File has been updated.
 #  Successfully updated.
 
@@ -210,7 +212,7 @@ uninstall: tools_uninstall
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-26 21:26:50.8280197
+#  Last modified 2022-08-26 21:26:50
 #  File has been updated.
 #  Successfully updated.
 
@@ -284,6 +286,7 @@ install: uninstall tools_install
 	@echo "	Ok"
 
 # files hash-table stats:
+ 
 # Load=15/1024=1%, Rehash=0, Collisions=7/43=16%
 # VPATH Search Paths
 
@@ -297,6 +300,6 @@ install: uninstall tools_install
 # strcache performance: lookups = 54 / hit rate = 46%
 # hash-table stats:
 # Load=29/8192=0%, Rehash=0, Collisions=4/54=7%
-# Finished Make data base on Fri Aug 26 21:35:47 2022
+# Finished Make data base on Sat Aug 27 20:36:00 2022
 
  

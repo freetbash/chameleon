@@ -33,7 +33,6 @@ void HttpRequest::write(std::string msg){
 }
 void HttpRequest::rm(){
     close(this->nfd);
-    delete this;
 
 }
 std::string HttpRequest::read(){

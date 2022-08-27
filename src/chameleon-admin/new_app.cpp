@@ -31,18 +31,22 @@ void new_app(std::string app_name){
 {models<<"#ifndef PROJECT_"+app_name+"_MODELS\n"+"#define PROJECT_"+app_name+"_MODELS\n"<<R""(
 #include <chameleon/models/Model.h>
 
-class Test:Model{
+class Test:public Model{
 public:
     std::string name;
+
+
     template<class Archive>
     void hibernate(Archive & ar){
         ar & HIBERLITE_NVP(name);
     }
+
+
     std::string toJson(){
         return "{\"name\":\""+this->name+"\"}";
     }
+
 };
-HIBERLITE_EXPORT_CLASS(Test)
 
 #endif
 )"";

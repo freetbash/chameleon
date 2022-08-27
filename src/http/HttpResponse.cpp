@@ -1,7 +1,7 @@
 #include <chameleon/http/HttpResponse.h>
 #include <chameleon/conf/vars.h>
 #include <chameleon/utils/tools.h>
-
+#include <chameleon/template/template.h>
 HttpResponse::HttpResponse(){}
 
 HttpResponse::HttpResponse(HttpRequest *request, std::string content, std::string status_code){

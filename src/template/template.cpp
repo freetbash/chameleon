@@ -4,6 +4,7 @@
 #include <chameleon/conf/vars.h>
 
 void render(HttpRequest *request,std::string template_path,std::vector<EasyJson::JSONObject> data){
+                                                        // {}
     std::string file_path = TEMPLATE_DIR+"/"+template_path;
     
     if(FileExists(file_path)){

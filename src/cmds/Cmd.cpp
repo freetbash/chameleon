@@ -56,6 +56,9 @@ void Cmd::compare(){
         this->show_help();
     }else if(this->op=="urls"){
         this->show_urls();
+    }else if(this->op=="init_models"){
+        db->createModel();
+        log("[+] Create Models Ok!");
     }else{
         this->show_help();
     }
@@ -68,6 +71,7 @@ void Cmd::compare(){
 void Cmd::show_help(){
     log("manage run");
     log("manage urls");
+    log("manage init_models");
 }
 
 void Cmd::show_urls(){

@@ -7,12 +7,9 @@ class Model{
     friend class hiberlite::access;
 public:
     virtual std::string toJson()=0;
-    EasyJson::JSONObject all(std::string name){
-        std::string json;
-        json="{\""+name+":["
-            +std::string("")
-        +"]}";
-    return *(EasyJson::JSONBase::parse_obj(json));
+    EasyJson::JSONObject obj(){
+        std::string json=this->toJson();
+        return *(EasyJson::JSONBase::parse_obj(json));
     }
 };
 

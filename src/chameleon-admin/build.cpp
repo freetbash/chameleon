@@ -18,6 +18,7 @@ void build(){
     check_error(system(cmd.c_str()));
 
     cmd="ccache g++ "+root+"/temp/*.o "+root+"/main.cpp -I./ -lchameleon -lhiberlite -lsqlite3 -lpthread -ldl -o manage -std=c++14 -O3 -g";
+    if(DEBUG) cmd+=" -g";
     log("[*] "+cmd);
     check_error(system(cmd.c_str()));
     log(color("[+]Build ok! {\n\tmanage\n}\n",GREEN));

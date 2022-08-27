@@ -8,6 +8,7 @@
 #include <chameleon/conf/vars.h>
 #include <vector>
 
+
 void render(HttpRequest *request,std::string template_path,std::vector<EasyJson::JSONObject> data);
 
 

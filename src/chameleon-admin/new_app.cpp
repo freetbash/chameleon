@@ -46,6 +46,18 @@ public:
         return "{\"name\":\""+this->name+"\"}";
     }
 
+    static std::string all(){
+        auto a = db->getAllBeans<Test>();
+        std::string json;
+        json="[";
+        for(auto each:a){
+            json+=each->toJson()+", ";
+        }
+        json.pop_back();
+        json.pop_back();
+        json+="]";
+        return json;
+    }
 };
 
 #endif

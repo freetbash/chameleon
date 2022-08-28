@@ -12,9 +12,10 @@ void render(HttpRequest *request,std::string template_path,std::map<std::string,
         json="{";
         for(std::pair<std::string,std::string> each :data){
             json+="\""+each.first+"\":";
-            json+=each.second+",";
+            json+=each.second+", ";
         }
-        json.pop_back();
+        json.pop_back();// "."
+        json.pop_back();// " "
         json+="}";
         log(json);
         cJinja::HtmlTemplate html(file_path,0);

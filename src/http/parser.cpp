@@ -16,7 +16,7 @@ void parser(HttpRequest *request){
         
     }else{
         HttpResponse(request,"ERROR YOUR REQUEST!");
-        log("[-] "+request->ip +" is not a http request! ");
+        log("[-] "+request->ip+request->path +" is not a http request! ");
         request->rm();
     }
 }

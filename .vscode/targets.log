@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Aug 28 07:26:27 2022
+# Make data base, printed on Sun Aug 28 10:22:45 2022
 
 # Variables
 
@@ -59,7 +59,7 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 PWD = /home/bash/Projects/chameleon
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-a13e42da-e9db-435a-92d9-d0a053d7effb.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bc0a1292-3c80-4616-a92d-b3870606c00a.sock
 # environment
 WSL_INTEROP = /run/WSL/8_interop
 # environment
@@ -300,6 +300,6 @@ install: uninstall tools_install
 # strcache performance: lookups = 54 / hit rate = 46%
 # hash-table stats:
 # Load=29/8192=0%, Rehash=0, Collisions=4/54=7%
-# Finished Make data base on Sun Aug 28 07:26:27 2022
+# Finished Make data base on Sun Aug 28 10:22:45 2022
 
  

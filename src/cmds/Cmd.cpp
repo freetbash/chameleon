@@ -57,7 +57,12 @@ void Cmd::compare(){
     }else if(this->op=="urls"){
         this->show_urls();
     }else if(this->op=="init_models"){
-        db->createModel();
+        try{
+
+            db->createModel();
+        }catch(std::exception &e){
+            log(e.what());
+        }
         log("[+] Create Models Ok!");
     }else{
         this->show_help();

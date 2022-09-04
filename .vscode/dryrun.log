@@ -1,4 +1,4 @@
-make --dry-run --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/bash/Projects/chameleon'
 for i in hiberlite;do echo "	Build ($i)"; make -C tools/$i/src; done;
 	Build (hiberlite)
@@ -61,7 +61,6 @@ make[1]: Entering directory '/home/bash/Projects/chameleon/src/models'
 echo 
 make[1]: Leaving directory '/home/bash/Projects/chameleon/src/models'
 	Build (template)
- 
 make[1]: Entering directory '/home/bash/Projects/chameleon/src/template'
 g++ -I../../include -w -std=c++14 -c JSONObject.cpp -o ../../temp/JSONObject.cpp.o
 g++ -I../../include -w -std=c++14 -c JSONArray.cpp -o ../../temp/JSONArray.cpp.o
@@ -76,36 +75,29 @@ make[1]: Entering directory '/home/bash/Projects/chameleon/src/urls'
 g++ -I../../include -w -std=c++14 -c urls.cpp -o ../../temp/urls.cpp.o
 g++ -I../../include -w -std=c++14 -c matcher.cpp -o ../../temp/matcher.cpp.o
 g++ -I../../include -w -std=c++14 -c chameleon_urls.cpp -o ../../temp/chameleon_urls.cpp.o
- 
 echo 
 make[1]: Leaving directory '/home/bash/Projects/chameleon/src/urls'
 	Build (utils)
- 
 make[1]: Entering directory '/home/bash/Projects/chameleon/src/utils'
 g++ -I../../include -w -std=c++14 -c colors.cpp -o ../../temp/colors.cpp.o
 g++ -I../../include -w -std=c++14 -c httptool.cpp -o ../../temp/httptool.cpp.o
 g++ -I../../include -w -std=c++14 -c httpcode.cpp -o ../../temp/httpcode.cpp.o
- 
 g++ -I../../include -w -std=c++14 -c bashhttp.cpp -o ../../temp/bashhttp.cpp.o
 g++ -I../../include -w -std=c++14 -c mimetype.cpp -o ../../temp/mimetype.cpp.o
 g++ -I../../include -w -std=c++14 -c tools.cpp -o ../../temp/tools.cpp.o
 g++ -I../../include -w -std=c++14 -c httptime.cpp -o ../../temp/httptime.cpp.o
 echo 
 make[1]: Leaving directory '/home/bash/Projects/chameleon/src/utils'
- 
 	Build (views)
  
 make[1]: Entering directory '/home/bash/Projects/chameleon/src/views'
 g++ -I../../include -w -std=c++14 -c notfound.cpp -o ../../temp/notfound.cpp.o
- 
 g++ -I../../include -w -std=c++14 -c handle_static.cpp -o ../../temp/handle_static.cpp.o
 g++ -I../../include -w -std=c++14 -c chameleon.cpp -o ../../temp/chameleon.cpp.o
 echo 
 make[1]: Leaving directory '/home/bash/Projects/chameleon/src/views'
- 
 echo Building libchameleon.a
 ar rcsv bin/libchameleon.a temp/*.o
- 
 echo Building chameleon-admin...
 g++ src/main.cpp -Iinclude -Itools/hiberlite/include -w -Lbin -Ltools/hiberlite/bin -lchameleon -lhiberlite -lsqlite3 -lpthread -ldl -o bin/chameleon-admin -w -std=c++14
 make: Leaving directory '/home/bash/Projects/chameleon'

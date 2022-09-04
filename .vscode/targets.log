@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2014 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Sep  4 14:51:43 2022
+# Make data base, printed on Sun Sep  4 21:43:55 2022
 
 # Variables
 
@@ -57,9 +59,9 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 PWD = /home/bash/Projects/chameleon
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-51e7c0e5-fb15-4a59-b08c-d2bc6fd23b0e.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-dc399ee1-31e5-41aa-87d5-3b806749a7cc.sock
 # environment
-WSL_INTEROP = /run/WSL/15809_interop
+WSL_INTEROP = /run/WSL/10_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -275,6 +277,7 @@ chameleon-admin: libchameleon.a
 install: uninstall tools_install
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 25):
 	@echo "	Install chameleon"
@@ -282,9 +285,6 @@ install: uninstall tools_install
 	@cp bin/chameleon-admin /usr/bin/chameleon-admin
 	@cp bin/libchameleon.a /usr/lib/libchameleon.a 
 	@echo "	Ok"
- 
-make: *** No rule to make target 'all'.  Stop.
-
 
 # files hash-table stats:
 # Load=15/1024=1%, Rehash=0, Collisions=7/43=16%
@@ -300,6 +300,6 @@ make: *** No rule to make target 'all'.  Stop.
 # strcache performance: lookups = 54 / hit rate = 46%
 # hash-table stats:
 # Load=29/8192=0%, Rehash=0, Collisions=4/54=7%
-# Finished Make data base on Sun Sep  4 14:51:43 2022
+# Finished Make data base on Sun Sep  4 21:43:55 2022
 
  

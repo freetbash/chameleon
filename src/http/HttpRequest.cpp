@@ -4,6 +4,7 @@
 
 #include <sys/socket.h>
 
+#include <signal.h>
 #include <unistd.h>
 #include <string.h>
 #include <chameleon/conf/vars.h>
@@ -29,7 +30,8 @@ HttpRequest *NewHttpRequest(HttpServer *server){
 
 
 void HttpRequest::write(std::string msg){
-    send(this->nfd,msg.c_str(),strlen(msg.c_str()),0);
+    signal(SIGPIPE,SIG_IGN);
+    send(this->nfd,msg.c_str(),strlen(msg.c_str()),MSG_NOSIGNAL);
 }
 void HttpRequest::rm(){
     close(this->nfd);

@@ -17,7 +17,6 @@ void render(HttpRequest *request,std::string template_path,std::map<std::string,
         json.pop_back();// "."
         json.pop_back();// " "
         json+="}";
-        log(json);
         cJinja::HtmlTemplate html(file_path,0);
         EasyJson::JSONObject obj = *(EasyJson::JSONBase::parse_obj(json));
         html.setValue(obj);

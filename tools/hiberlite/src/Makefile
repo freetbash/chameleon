@@ -19,14 +19,14 @@ clean:
 install:uninstall ../bin/libhiberlite.a
 	@echo "	Install hiberlite"
 	cp ../include/* /usr/include -rf
-	cp ../bin/libhiberlite.a /lib/libhiberlite.a
-	cp ../bin/libsqlite3.a /lib/libsqlite3.a
+	cp ../bin/libhiberlite.a /usr/lib/libhiberlite.a
+	cp ../bin/libsqlite3.a /usr/lib/libsqlite3.a
 	@echo "	Ok"
 
 uninstall:
 	@echo "	Remove hiberlite"
 	rm -rf /usr/include/hiberlite 
 	rm -f /usr/include/sqlite3.h
-	rm -f /lib/libhiberlite.a
-	rm -f /lib/libsqlite3.a
+	rm -f /usr/lib/libhiberlite.a
+	rm -f /usr/lib/libsqlite3.a
 	@echo "	Ok"

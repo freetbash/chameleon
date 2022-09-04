@@ -25,13 +25,13 @@ install:uninstall tools_install
 	@echo "	Install chameleon"
 	@cp include/chameleon /usr/include/chameleon -rf
 	@cp bin/chameleon-admin /usr/bin/chameleon-admin
-	@cp bin/libchameleon.a /lib/libchameleon.a 
+	@cp bin/libchameleon.a /usr/lib/libchameleon.a 
 	@echo "	Ok"
 
 uninstall:tools_uninstall 
 	@echo "	Remove chameleon"
 	rm -rf /usr/include/chameleon
-	rm -f /lib/libchameleon.a
+	rm -f /usr/lib/libchameleon.a
 	rm -f /usr/bin/chameleon-admin
 
 tools_install:

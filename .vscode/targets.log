@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Aug 28 10:22:45 2022
+# Make data base, printed on Sun Sep  4 13:54:03 2022
 
 # Variables
 
@@ -43,7 +43,7 @@ VSCODE_CWD = /mnt/d/Apps/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/bash/.vscode-server/bin/e4503b30fc78200f846c62cf8091b76ff5547662/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/mnt/d/Apps/vmware/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/d/Environment/MinGW/bin:/mnt/d/Environment/Git/cmd:/mnt/d/Environment/miniconda3:/mnt/d/Environment/vim/vim90:/mnt/c/Users/31414/AppData/Local/Microsoft/WindowsApps:/mnt/d/Apps/Microsoft VS Code/bin:/mnt/d/Environment/Fiddler
+PATH = /home/bash/.vscode-server/bin/784b0177c56c607789f9638da7b6bf3230d47a8c/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/mnt/d/Apps/vmware/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/d/Environment/MinGW/bin:/mnt/d/Environment/Git/cmd:/mnt/d/Environment/miniconda3:/mnt/d/Environment/vim/vim90:/mnt/c/Users/31414/AppData/Local/Microsoft/WindowsApps:/mnt/d/Apps/Microsoft VS Code/bin:/mnt/d/Environment/Fiddler:/mnt/d/Environment/IntelliJ IDEA 2022.2.1/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -59,9 +59,9 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 PWD = /home/bash/Projects/chameleon
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-bc0a1292-3c80-4616-a92d-b3870606c00a.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-52c4b779-d47f-4a99-970d-3ba51bbc8ff3.sock
 # environment
-WSL_INTEROP = /run/WSL/8_interop
+WSL_INTEROP = /run/WSL/832_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -167,7 +167,7 @@ WSL_DISTRO_NAME = Debian
 
 # Directories
 
-# . (device 2064, inode 27919): 14 files, no impossibilities.
+# . (device 2080, inode 27919): 14 files, no impossibilities.
 
 # 14 files, no impossibilities in 1 directories.
 
@@ -206,13 +206,13 @@ uninstall: tools_uninstall
 #  recipe to execute (from 'Makefile', line 32):
 	@echo "	Remove chameleon"
 	rm -rf /usr/include/chameleon
-	rm -f /lib/libchameleon.a
+	rm -f /usr/lib/libchameleon.a
 	rm -f /usr/bin/chameleon-admin
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-26 21:26:50
+#  Last modified 2022-09-04 13:53:51.147530505
 #  File has been updated.
 #  Successfully updated.
 
@@ -283,7 +283,7 @@ install: uninstall tools_install
 	@echo "	Install chameleon"
 	@cp include/chameleon /usr/include/chameleon -rf
 	@cp bin/chameleon-admin /usr/bin/chameleon-admin
-	@cp bin/libchameleon.a /lib/libchameleon.a 
+	@cp bin/libchameleon.a /usr/lib/libchameleon.a 
 	@echo "	Ok"
 
 # files hash-table stats:
@@ -300,6 +300,6 @@ install: uninstall tools_install
 # strcache performance: lookups = 54 / hit rate = 46%
 # hash-table stats:
 # Load=29/8192=0%, Rehash=0, Collisions=4/54=7%
-# Finished Make data base on Sun Aug 28 10:22:45 2022
+# Finished Make data base on Sun Sep  4 13:54:03 2022
 
  

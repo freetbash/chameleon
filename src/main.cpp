@@ -21,7 +21,10 @@ int main(int argc, char *argv[]){
             }else{
                 show_help();
             }
-        }else{
+        }else if(std::string(argv[1])==std::string("collect")){
+            collect();
+        }
+        else{
             show_help();
         }
     }else{

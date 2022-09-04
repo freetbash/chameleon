@@ -9,5 +9,6 @@ void new_app(std::string app_name);
 void show_help();
 void build();
 void check();
+void collect();
 extern std::string project_name;
 #endif

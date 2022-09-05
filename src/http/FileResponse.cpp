@@ -5,6 +5,15 @@
 
 void FileResponse(HttpRequest *request,std::string file_path, std::string status_code){
     if(FileExists(file_path)){
+        if(request->headers.count("If-Modified-Since")){
+            std::string last_modified = request->headers["If-Modified-Since"];
+            std::string file_modified = get_file_lastmodified(file_path);
+            
+            if(last_modified == file_modified){
+                HttpResponse(request,"","304");
+                return;
+            }
+        }
         std::string size = ltos(file_size(file_path));
         std::string filetype = mimetype.find(split(file_path,"\\.").back());
         
@@ -14,6 +23,8 @@ void FileResponse(HttpRequest *request,std::string file_path, std::string status
             +SERVER+HTTP_DELIM
             +"Content-type: "+filetype+HTTP_DELIM
             +"Content-Length: "+size+HTTP_DELIM
+            +"Cache-control: no-cache"+HTTP_DELIM
+            +"last-modified: "+get_file_lastmodified(file_path)+HTTP_DELIM
             +"Date: "+http_gmtime()+HTTP_DELIM
             +HTTP_DELIM
         );

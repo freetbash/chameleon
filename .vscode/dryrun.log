@@ -19,6 +19,7 @@ ar rcsv ../bin/libsqlite3.a ../temp/sqlite3.c.o
 make[1]: Leaving directory '/home/bash/Projects/chameleon/tools/hiberlite/src'
 for i in app chameleon-admin cmds conf db http models template urls utils views;do echo "	Build ($i)"; make -C src/$i; done;
 	Build (app)
+ 
 make[1]: Entering directory '/home/bash/Projects/chameleon/src/app'
 g++ -I../../include -w -std=c++14 -c app.cpp -o ../../temp/app.cpp.o
 echo 
@@ -72,7 +73,6 @@ g++ -I../../include -w -std=c++14 -c cjinja.cpp -o ../../temp/cjinja.cpp.o
 echo 
 make[1]: Leaving directory '/home/bash/Projects/chameleon/src/template'
 	Build (urls)
- 
 make[1]: Entering directory '/home/bash/Projects/chameleon/src/urls'
 g++ -I../../include -w -std=c++14 -c urls.cpp -o ../../temp/urls.cpp.o
 g++ -I../../include -w -std=c++14 -c matcher.cpp -o ../../temp/matcher.cpp.o
@@ -80,7 +80,6 @@ g++ -I../../include -w -std=c++14 -c chameleon_urls.cpp -o ../../temp/chameleon_
 echo 
 make[1]: Leaving directory '/home/bash/Projects/chameleon/src/urls'
 	Build (utils)
- 
 make[1]: Entering directory '/home/bash/Projects/chameleon/src/utils'
 g++ -I../../include -w -std=c++14 -c colors.cpp -o ../../temp/colors.cpp.o
 g++ -I../../include -w -std=c++14 -c httptool.cpp -o ../../temp/httptool.cpp.o

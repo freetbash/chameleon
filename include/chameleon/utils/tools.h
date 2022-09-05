@@ -31,5 +31,6 @@ bool FileExists(std::string path);
 bool DirExists(std::string path);
 std::vector<std::string> split(std::string str, std::string pattern);
 std::string replace_all_distinct(std::string str, const std::string old_value, const std::string new_value);
+std::string get_file_lastmodified(std::string file_path);
 #endif
 #endif

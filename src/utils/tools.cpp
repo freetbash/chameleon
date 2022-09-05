@@ -125,3 +125,17 @@ std::string ltos(long l)
     is>>result;  
     return result;  
 }  
+
+
+
+std::string get_file_lastmodified(std::string file_path){
+
+    struct stat buf;
+    int result;
+    result =stat(file_path.c_str(), &buf );
+    tm* gmt = gmtime(&buf.st_mtime);
+    const char* fmt = "%a, %d %b %Y %H:%M:%S GMT";
+    char tstr[30];
+    strftime(tstr, sizeof(tstr), fmt, gmt);
+    return tstr;
+}

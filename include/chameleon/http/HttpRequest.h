@@ -5,6 +5,9 @@
 class HttpServer;
 
 class HttpRequest{
+private:
+    std::map<std::string, std::string> _GET;
+    std::map<std::string, std::string> _POST;
 public:
     int nfd;
     bool bad;
@@ -17,6 +20,9 @@ public:
     
     void write(std::string msg);
     std::string read();
+    void handle_http_data();
+    std::string GET(std::string key);
+    std::string POST(std::string key);
     
     HttpRequest();
     ~HttpRequest();

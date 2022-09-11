@@ -22,8 +22,14 @@ std::string contain(HttpRequest *request, UrlPatterns *url_patterns){
     std::vector<std::string> values;
     std::vector<std::string> temp;
     std::string mode;
-    std::string path = request->path; //"/asec/<asdasd>/<name>/<id>/";// --> /asec/(.*?)/(.*?)             /asec/qwexqwc/2
-                                      // url path /asec/<name>  -> /asec/(.*?)
+    std::string path;
+    std::vector<std::string> _ = single_split(request->path,"?");
+    if(_.size()>1){
+        path=_[0];
+    }else{
+        path= request->path; //"/asec/<asdasd>/<name>/<id>/";// --> /asec/(.*?)/(.*?)             /asec/qwexqwc/2
+    }   
+                              // url path /asec/<name>  -> /asec/(.*?)
     for (auto _ : url_patterns->patterns){
         temp.clear();
         std::string mode = _.first;

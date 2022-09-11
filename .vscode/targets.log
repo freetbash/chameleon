@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Sep  5 13:33:30 2022
+# Make data base, printed on Sun Sep 11 08:29:50 2022
 
 # Variables
 
@@ -31,7 +31,7 @@ CURDIR := /home/bash/Projects/chameleon
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{}}
+VSCODE_NLS_CONFIG = {"locale":"zh-cn","availableLanguages":{"*":"zh-cn"},"_languagePackId":"a1516064f4f46f2a618c351c3fa99660.zh-cn","_translationsConfigFile":"/home/bash/.vscode-server/data/clp/a1516064f4f46f2a618c351c3fa99660.zh-cn/tcf.json","_cacheRoot":"/home/bash/.vscode-server/data/clp/a1516064f4f46f2a618c351c3fa99660.zh-cn","_resolvedLanguagePackCoreLocation":"/home/bash/.vscode-server/data/clp/a1516064f4f46f2a618c351c3fa99660.zh-cn/784b0177c56c607789f9638da7b6bf3230d47a8c","_corruptedFile":"/home/bash/.vscode-server/data/clp/a1516064f4f46f2a618c351c3fa99660.zh-cn/corrupted.info","_languagePackSupport":true}
 # environment
 _ = /mnt/d/Apps/Microsoft VS Code/bin/code
 # makefile (from 'Config', line 1)
@@ -43,7 +43,7 @@ VSCODE_CWD = /mnt/d/Apps/Microsoft VS Code
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/bash/.vscode-server/bin/784b0177c56c607789f9638da7b6bf3230d47a8c/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/mnt/d/Apps/vmware/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/d/Environment/MinGW/bin:/mnt/d/Environment/Git/cmd:/mnt/d/Environment/miniconda3:/mnt/d/Environment/vim/vim90:/mnt/c/Users/31414/AppData/Local/Microsoft/WindowsApps:/mnt/d/Apps/Microsoft VS Code/bin:/mnt/d/Environment/Fiddler:/mnt/d/Environment/IntelliJ IDEA 2022.2.1/bin
+PATH = /home/bash/.vscode-server/bin/784b0177c56c607789f9638da7b6bf3230d47a8c/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/d/Environment/Python3.10.7/Scripts/:/mnt/d/Environment/Python3.10.7/:/mnt/c/Program Files/Common Files/Oracle/Java/javapath:/mnt/c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/mnt/d/Apps/vmware/bin/:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/mnt/d/Environment/MinGW/bin:/mnt/d/Environment/Git/cmd:/mnt/d/Environment/vim/vim90:/mnt/c/Users/31414/AppData/Local/Microsoft/WindowsApps:/mnt/d/Apps/Microsoft VS Code/bin:/mnt/d/Environment/Fiddler:/mnt/d/Environment/IntelliJ IDEA 2022.2.1/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
@@ -59,7 +59,7 @@ LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:
 # environment
 PWD = /home/bash/Projects/chameleon
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-d8c4c700-91e1-421f-a448-46728d8f36bb.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-5325d5e6-6436-4a62-9907-b66c284a763e.sock
 # environment
 WSL_INTEROP = /run/WSL/8_interop
 # environment
@@ -277,9 +277,9 @@ chameleon-admin: libchameleon.a
 install: uninstall tools_install
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 25):
- 
 	@echo "	Install chameleon"
 	@cp include/chameleon /usr/include/chameleon -rf
 	@cp bin/chameleon-admin /usr/bin/chameleon-admin
@@ -300,6 +300,6 @@ install: uninstall tools_install
 # strcache performance: lookups = 54 / hit rate = 46%
 # hash-table stats:
 # Load=29/8192=0%, Rehash=0, Collisions=4/54=7%
-# Finished Make data base on Mon Sep  5 13:33:30 2022
+# Finished Make data base on Sun Sep 11 08:29:50 2022
 
  

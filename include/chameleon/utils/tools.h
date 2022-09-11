@@ -1,15 +1,6 @@
 #ifndef _CHAMELEON_TOOLS__H
 #define _CHAMELEON_TOOLS__H
 #include <string>
-#include <errno.h>
-#include <sys/stat.h> 
-#include <sys/types.h>
-#include <chameleon/utils/colors.h>
-#include <vector>
-
-#ifndef CCAO_TOOLS_TOOLS
-#define CCAO_TOOLS_TOOLS
-#include <string>
 #include <vector>
 #include <unistd.h>
 #include <sys/stat.h> 
@@ -29,8 +20,8 @@ std::vector<std::string> readlines_fromfile(std::string file_path);// here !
 std::string ltos(long l);
 bool FileExists(std::string path);
 bool DirExists(std::string path);
+std::vector<std::string> single_split(const std::string& str, const std::string& delim);
 std::vector<std::string> split(std::string str, std::string pattern);
 std::string replace_all_distinct(std::string str, const std::string old_value, const std::string new_value);
 std::string get_file_lastmodified(std::string file_path);
-#endif
 #endif

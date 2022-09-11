@@ -11,7 +11,9 @@ void parser(HttpRequest *request){
     if(check_http(http_content)){
         request->path = get_http_path(http_content);
         request->method = get_http_method(http_content);
+        // GET_DATA POST_DATA
         request->body = get_http_body(http_content);
+        request->handle_http_data();
         request->headers = get_http_headers(http_content);
         
     }else{

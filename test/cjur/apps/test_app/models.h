@@ -6,19 +6,18 @@
 class Test:public Model{
 public:
     std::string name;
-    int fid;
 
 
     template<class Archive>
     void hibernate(Archive & ar){
         ar & HIBERLITE_NVP(name);
-        ar & HIBERLITE_NVP(fid);
     }
 
 
     std::string toJson(){
-        return "{\"name\":\""+this->name+"\",{\"fid\":"+std::to_string(this->fid)+"}";
+        return "{\"name\":\""+this->name+"\"}";
     }
+
     static std::string all(){
         auto a = db->getAllBeans<Test>();
         std::string json;
@@ -31,7 +30,6 @@ public:
         json+="]";
         return json;
     }
-
 };
 
 #endif
